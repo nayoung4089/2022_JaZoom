@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Whale Young
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="room.css")
+        style
+         include style.css
+         include room.css
+    body 
+      div#wrap
+         div#blur
+         header 
+            div#h3 회의 입장
+         main
+            div#welcome
+               form
+                  input(placeholder="회의 이름", required, type="text")
+                  div#button
+                    button 채팅 시작
+               div#rooming
+                  div
+                    div 진행중인 회의
+                    ul#ing
+            div#nickName
+              form
+                  input(placeholder="닉네임", required, type="text")
+                  div#button
+                    button 확인
+            div#room
+               div#chat-page
+                  ul
+                  form#name
+                       input(placeholder="변경할 닉네임", required, type="text")
+                       div#button
+                         button 변경하기
+               div#footer
+                  button#change 이름
+                  form#message
+                     input(required, type="text")
+                     button Send
+         script(src="/socket.io/socket.io.js")
+         script(src="/public/js/app.js") 

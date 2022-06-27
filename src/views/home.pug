@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Whale Young
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="home.css")
+        style
+         include style.css
+         include home.css
+    body 
+      div#wrap
+         header 
+            h2#white Whale Young
+            img(src='https://search.pstatic.net/common/?src=https%3A%2F%2Fditto-phinf.pstatic.net%2F20210217_2%2F1613537959588Yv9bW_PNG%2F7ad84e88424411c18ea95f0143ff9bb3.png' style='width:100px; height:100px;')
+         main
+            div#welcome
+               h2 회의 시작
+               div#text
+                 div#small 웨일영에서 화상 회의를 시작해보세요! 
+                 div#small 공유받은 회의에 입장하거나 새로운 회의를 생성할 수 있습니다.
+               button#start 채팅 시작
+
+         script(src="/socket.io/socket.io.js")
+         script(src="/public/js/home.js") 

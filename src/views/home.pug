@@ -4,24 +4,87 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Whale Young
-        link(rel="stylesheet", href="style.css")
-        link(rel="stylesheet", href="home.css")
-        style
-         include style.css
-         include home.css
+        meta(name="viewport" content="user-scalable=no, width=device-width")
+        title 자줌
+        link(rel="stylesheet", href="../public/css/style.css")
     body 
-      div#wrap
-         header 
-            h2#white Whale Young
-            img(src='https://search.pstatic.net/common/?src=https%3A%2F%2Fditto-phinf.pstatic.net%2F20210217_2%2F1613537959588Yv9bW_PNG%2F7ad84e88424411c18ea95f0143ff9bb3.png' style='width:100px; height:100px;')
-         main
-            div#welcome
-               h2 회의 시작
-               div#text
-                 div#small 웨일영에서 화상 회의를 시작해보세요! 
-                 div#small 공유받은 회의에 입장하거나 새로운 회의를 생성할 수 있습니다.
-               button#start 채팅 시작
-
-         script(src="/socket.io/socket.io.js")
-         script(src="/public/js/home.js") 
+        div#wrap
+            div#blur
+            header#header
+                div
+                   img(src="../public/css/logo2.png" width="100px")
+                div Nomad
+                div BBIYOCK
+                div Nico
+                div Zoom
+            main
+                div#welcome
+                    form
+                        input(placeholder="회의 이름", required, type="text")
+                        div#button
+                            button 채팅 시작
+                    div#rooming
+                        div
+                            div 진행중인 회의
+                            ul#ing
+                div#nickName
+                    form
+                        div#random
+                            i.fa-solid.fa-arrows-rotate
+                        input(placeholder="닉네임", required, type="text")
+                        div#button
+                            button 확인
+                div#youtube
+                    form
+                        div#ment 혼자여도 괜찮아요!
+                        input(placeholder="유튜브 주소를 입력하세요", required, type="text")
+                        div#button
+                            button 확인
+                div#call
+                    div#myStream
+                        div#video-area
+                            video#myFace(autoplay,playsinline, class="video-fill")
+                        div#section1
+                            div#mute
+                                i.fa-solid.fa-microphone
+                            div#camera
+                                i.fa-solid.fa-video
+                            details#select-cameras
+                                summary
+                                    i.fa-solid.fa-gear
+                                select#cameras
+                            div#change-size
+                                i.fa-solid.fa-arrows-rotate
+                            div#youTubeBtn
+                                i.fa-brands.fa-youtube
+                            div#chatStart
+                                i.fa-solid.fa-comment-dots
+                        div#video-area
+                            div#peerVideo
+                                video#peerFace(autoplay,playsinline, class="video-small")
+                                iframe#peerYouTube(class="iframe-video-small" allowfullscreen)
+                    div#chatting
+                        div#room
+                            div#back
+                                i.fa-solid.fa-arrow-left
+                            ul
+                            form#name
+                                div#randomChange
+                                    i.fa-solid.fa-arrows-rotate
+                                div#close X
+                                input(placeholder="변경할 닉네임", required, type="text")
+                                div#button
+                                    button 변경하기
+                            div#footer
+                                div#change
+                                    i.fa-solid.fa-arrows-rotate
+                                form#message
+                                    input(required, type="text")
+                                    button
+                                        i.fa-solid.fa-paper-plane
+            script(src="https://code.jquery.com/jquery-3.6.0.js")
+            script(src="https://code.jquery.com/ui/1.13.1/jquery-ui.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js")
+            script(src="/socket.io/socket.io.js") 
+            script(src="/public/js/app.js")  
+            script(src="https://kit.fontawesome.com/d2dc5e8519.js" crossorigin="anonymous")

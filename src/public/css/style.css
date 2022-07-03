@@ -1,0 +1,346 @@
+:root {
+    --maincolor : #b80d57;
+    --grey : rgb(126, 126, 126);
+    --lightGrey: #ededed;
+    --shadow: rgb(214, 214, 214);
+    --chatColor: rgb(255,235,51);
+  }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-style: none;
+    list-style: none;
+}
+body {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header{
+    color: var(--grey);
+    padding: 10px;
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px var(--shadow);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+header div{
+    width: 30%;
+    justify-content: space-around;
+}
+#welcome, #nickName, #youtube{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+}
+#ing li {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 0.6rem;
+    border-style: none;
+    border-radius: 5px;
+    background-color: var(--lightGrey);
+}
+#nickName, #youtube{
+    background-color: white;
+    z-index: 3000;
+    padding: 20px;
+    border-radius: 20px;
+}
+#youtube{
+    display:none;
+}
+#youTubeBtn{
+    color: red;
+    display: block;
+}
+
+/* 본격 메인화면 */
+#call{
+    width:100%;
+    height: 100vh;
+}
+
+#myStream{
+    /* display: flex; */
+    height:100vh;
+}
+/* video part */
+#video-area {
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+  }
+.video-fill{
+    object-fit: fill;
+    z-index: -1;
+    height:100vh;
+    background-color:black;
+}
+.iframe-video-fill{
+    object-fit: fill;
+    z-index: -1;
+    height:100vh;
+    width:100%;
+    padding:50px;
+    background-color:black;
+}
+.video-small{
+    position: absolute;
+    z-index:3000;
+    top:30px;
+    right:30px;
+}
+.iframe-video-small{
+    position: absolute;
+    z-index:3000;
+    width: 150px;
+    height: auto;
+    top:30px;
+    left:30px;
+}
+section {
+  padding: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+#section1 {
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    bottom:0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    height:50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    color:white;
+    padding: 0 100px;
+}
+#section1 div, details {
+    padding: 0 20px;
+}
+#video-area, #chatting{
+    justify-content: space-around;
+}
+/* 모바일용 채팅창 */
+/* Mobile - Portrait & landscape*/
+@media (max-width: 950px) {
+    header{
+        font-size: 0.8rem;
+    }
+    li{
+        font-size: 0.9rem;
+    }
+    .video-small{
+        width: 150px;
+        height: auto;
+    }
+    #chatting{
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        display: none;
+        right: 0;
+        background-color: whitesmoke;
+        z-index: 3000;
+        text-align: initial;
+        overflow-y: scroll;
+        padding: 0 0 50px 0;
+    }
+    #footer{
+        width:100%
+    }
+}
+/* Desktop */
+@media all and (min-width: 950px) {
+    header{
+        font-size: 0.9rem;
+    }
+    li{
+        font-size: 0.8rem;
+    }
+    .video-small{
+        width: 200px;
+        height: auto;
+    }
+    #chatting{
+        width: 20%;
+        min-height: 100vh;
+        position: absolute;
+        display: none;
+        right: 0;
+        background-color: whitesmoke;
+        z-index: 3000;
+        text-align: initial;
+        overflow-y: scroll;
+        padding: 0 0 50px 0;
+    }
+}
+/* 본격 채팅창 */
+#back{
+    padding: 10px;
+    font-size: 20px;
+}
+ul{
+    padding: 20px;
+}
+li {
+    background-color: white;
+    padding: 5px;
+    max-width: 70%;
+    word-break:break-all;
+    border-radius: 0 10px 10px 10px;
+    margin-bottom: 10px;
+    text-align: initial;
+    clear: both;
+    float: left;
+    max-width: 70%;
+}
+#join{
+    text-align: center;
+    background-color: var(--shadow);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 100%;
+}
+#me {
+    float: right;
+    border-radius: 10px 0 10px 10px;
+    background-color: var(--chatColor);
+}
+#other-name {
+    background-color: initial;
+    border: none;
+    padding: 0;
+    font-weight: 530;
+}
+#blur{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1000;
+}
+#name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: white;
+    margin: 0;
+    padding: 20px 0 0;
+    border-radius: 20px;
+    padding: 20px;
+}
+#close, #closeYouTube{
+    float: right;
+    padding: 0 0 20px 0;
+    font-weight: 500;
+}
+#random, #randomChange{
+    float: left;
+    padding: 0 0 20px 0;
+    font-weight: 500;
+}
+#name input {
+    margin: 0;
+    padding: 10px 20px;
+}
+/* 채팅 입력창 */
+#footer{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    z-index: 3000;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px 0;
+    color: white;
+    background-color: white;
+}
+#change{
+    width: 50px;
+    height: 50px;
+    background-color: var(--maincolor);
+    text-align: center;
+    line-height: 50px;
+}
+#message button{
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    padding: 0;
+    color: white;
+    box-shadow: initial;
+    font-size: 20px;
+}
+#message{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    width:80%;
+}
+#message input {
+    border: none;
+    box-shadow: initial;
+    height: 100%;
+    background-color: white;
+    border-radius: 0;
+}
+
+
+
+
+
+button{
+    color: white;
+    padding: 0.6rem;
+    background-color: var(--maincolor);
+    border-style: none;
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px var(--shadow);
+}
+#button{
+    padding: 20px 0;
+}
+form{
+    margin-top: 20px;
+}
+form input{
+    padding:10px;
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px var(--shadow);
+    border-radius: 5px;
+}
+#white{
+    color: white;
+}
+#small{
+    font-size: 0.6rem;
+}
+#ment{
+    font-weight: bold;
+    padding: 20px;
+}

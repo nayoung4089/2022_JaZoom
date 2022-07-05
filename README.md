@@ -1,4 +1,4 @@
-# 자(自)줌
+# 자(自)줌 : Zoom + YouTube
 
 슬퍼하지마~NONO NOOM~
 <br/>

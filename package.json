@@ -11,7 +11,8 @@
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
     "@socket.io/admin-ui": "^0.4.0",
